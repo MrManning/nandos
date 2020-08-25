@@ -14,7 +14,7 @@ public class Main {
             Scanner sc = new Scanner(filename);
             String[] gridSize = sc.nextLine().split(" ");
 
-            Rover.upGrid = new int[Integer.parseInt(gridSize[0])][Integer.parseInt(gridSize[1])];
+            Rover.plateau = new int[Integer.parseInt(gridSize[0]) + 1][Integer.parseInt(gridSize[1]) + 1];
 
             Rover rover = null;
             while(sc.hasNextLine()) {
@@ -26,7 +26,7 @@ public class Main {
                     int y = Integer.parseInt(inputLine[1]);
                     String heading = inputLine[2];
 
-                    if(Movement.validPosition(x, y) && Rotation.validRotation(heading) ) {
+                    if( Position.validPosition(x, y) && Rotation.validRotation(heading) ) {
                         rover = new Rover(x, y, heading);
                     }
                 } else {
@@ -35,6 +35,9 @@ public class Main {
                         if( rover != null ) {
                             rover.updateRover(instructions.charAt(i));
                         }
+                    }
+                    if( rover != null ) {
+                        System.out.println(rover.position);
                     }
                 }
 

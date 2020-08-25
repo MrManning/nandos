@@ -1,11 +1,12 @@
 package com.nandos;
 
 public class Rover {
-    public Movement position;
-    public static int[][] upGrid;
+    public Position position;
+    public static int[][] plateau;
 
     public Rover(int x, int y, String heading) {
-        this.position = new Movement(x, y, heading);
+        this.position = new Position(x, y, heading);
+        plateau[x][y] = 1;
     }
 
     public void updateRover(char command) {
@@ -21,36 +22,33 @@ public class Rover {
     }
 
     public void moveRover() {
-        int x = position.getX();
-        int y = position.getY();
-
         switch( position.getHeading().name() ) {
             case "N":
-                if( Movement.validPosition(x, y + 1)) {
-                    Rover.upGrid[x][y] = 0;
-                    position.setY(y + 1);
-                    Rover.upGrid[x][y] = 1;
+                if( Position.validPosition(position.getX(), position.getY() + 1)) {
+                    Rover.plateau[position.getX()][position.getY()] = 0;
+                    position.setY(position.getY() + 1);
+                    Rover.plateau[position.getX()][position.getY()] = 1;
                 }
                 break;
             case "E":
-                if( Movement.validPosition(x + 1, y) ) {
-                    Rover.upGrid[x][y] = 0;
-                    position.setX(x + 1);
-                    Rover.upGrid[x][y] = 1;
+                if( Position.validPosition(position.getX() + 1, position.getY())) {
+                    Rover.plateau[position.getX()][position.getY()] = 0;
+                    position.setX(position.getX() + 1);
+                    Rover.plateau[position.getX()][position.getY()] = 1;
                 }
                 break;
             case "S":
-                if( Movement.validPosition(x, y - 1) ) {
-                    Rover.upGrid[x][y] = 0;
-                    position.setY(y - 1);
-                    Rover.upGrid[x][y] = 1;
+                if( Position.validPosition(position.getX(), position.getY() - 1)) {
+                    Rover.plateau[position.getX()][position.getY()] = 0;
+                    position.setY(position.getY() - 1);
+                    Rover.plateau[position.getX()][position.getY()] = 1;
                 }
                 break;
             case "W":
-                if( Movement.validPosition(x - 1, y) ) {
-                    Rover.upGrid[x][y] = 0;
-                    position.setX(x - 1);
-                    Rover.upGrid[x][y] = 1;
+                if( Position.validPosition(position.getX() - 1, position.getY())) {
+                    Rover.plateau[position.getX()][position.getY()] = 0;
+                    position.setX(position.getX() - 1);
+                    Rover.plateau[position.getX()][position.getY()] = 1;
                 }
                 break;
             default: break;

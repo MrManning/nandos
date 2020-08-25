@@ -1,11 +1,11 @@
 package com.nandos;
 
-public class Movement {
+public class Position {
     private int x;
     private int y;
     private Rotation heading;
 
-    public Movement(int x, int y, String heading) {
+    public Position(int x, int y, String heading) {
         this.x = x;
         this.y = y;
         this.heading = Rotation.valueOf(heading.trim().toUpperCase());
@@ -36,12 +36,12 @@ public class Movement {
     }
 
     public static boolean validPosition(int x, int y){
-        int xLength = Rover.upGrid.length;
-        int yLength = Rover.upGrid[0].length;
+        int xLength = Rover.plateau.length;
+        int yLength = Rover.plateau[0].length;
 
         boolean inBounds = x >= 0 && x <= xLength - 1
                 && y >= 0 && y <= yLength - 1;
-        return inBounds && Rover.upGrid[x][y] == 0;
+        return inBounds && Rover.plateau[x][y] == 0;
     }
 
     @Override
