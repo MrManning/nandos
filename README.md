@@ -5,9 +5,9 @@ Program and tests have been run in both IntelliJ Community and in the terminal o
 
 ## Assumptions
 
-- All input comes from a file named `input.txt`
+- All input comes from a file `src/input.txt`
 - Rovers cannot be in the same position as another
-- Current `input.txt` contains the example input and 2 new rover inputs
+- Current `src/input.txt` contains the example input and 2 new rover inputs
 
 ## Running
 
