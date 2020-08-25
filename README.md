@@ -23,8 +23,8 @@ Runs the program
 ### Tests
 Compiles the tests
 
-`javac -d bin -cp bin:junit-platform-console-standalone-1.6.2.jar src/com/nandos/tests/*.java`
+`javac -d bin -cp bin:lib/junit-platform-console-standalone-1.6.2.jar src/com/nandos/tests/*.java`
 
 Runs the tests
 
-`java -jar junit-platform-console-standalone-1.6.2.jar -cp bin --scan-classpath`
+`java -jar lib/junit-platform-console-standalone-1.6.2.jar -cp bin --scan-classpath`
