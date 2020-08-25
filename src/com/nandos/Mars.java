@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Main {
+public class Mars {
 
     public static void main(String[] args) {
         File filename = new File("src/input.txt");
