@@ -1,13 +1,14 @@
-package com.nandos;
+package com.nandos.tests;
 
-import org.junit.jupiter.api.BeforeAll;
+import com.nandos.Rover;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class RoverTest {
-    @BeforeAll
-    static void init() {
+    @BeforeEach
+    void init() {
         Rover.plateau = new int[5][5];
     }
 

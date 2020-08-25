@@ -1,5 +1,8 @@
-package com.nandos;
+package com.nandos.tests;
 
+import com.nandos.Position;
+import com.nandos.Rover;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +16,7 @@ class PositionTest {
 
     @Test
     void validPosition() {
-        assertTrue(Position.validPosition(4,3));
+        Assertions.assertTrue(Position.validPosition(4,3));
     }
 
     @Test

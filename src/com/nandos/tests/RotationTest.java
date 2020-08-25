@@ -1,5 +1,6 @@
-package com.nandos;
+package com.nandos.tests;
 
+import com.nandos.Rotation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
