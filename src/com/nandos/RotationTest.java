@@ -15,7 +15,6 @@ class RotationTest {
 
     @Test
     void rotateRight() {
-        Rotation currentRotation = Rotation.N;
         currentRotation = currentRotation.rotateRight();
         currentRotation = currentRotation.rotateRight();
         currentRotation = currentRotation.rotateRight();
