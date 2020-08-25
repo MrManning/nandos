@@ -4,7 +4,6 @@ public class Movement {
     private int x;
     private int y;
     private Rotation heading;
-    private int degrees;
 
     public Movement(int x, int y, String heading) {
         this.x = x;
@@ -34,14 +33,6 @@ public class Movement {
 
     public void setHeading(Rotation heading) {
         this.heading = heading;
-    }
-
-    public int getDegrees() {
-        return degrees;
-    }
-
-    public void setDegrees(int degrees) {
-        this.degrees = degrees;
     }
 
     @Override
