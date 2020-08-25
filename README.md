@@ -12,8 +12,6 @@ Program and tests have been run in both IntelliJ Community and in the terminal o
 ## Running
 
 ### Program
-Run the following commands
-
 Compiles the files
 
 `javac -d bin -cp bin src/com/nandos/*.java`
@@ -23,8 +21,6 @@ Runs the program
 `java -cp bin com/nandos/Mars`
 
 ### Tests
-Run the following commands in sequence:
-
 Compiles the tests
 
 `javac -d bin -cp bin:junit-platform-console-standalone-1.6.2.jar src/com/nandos/tests/*.java`
