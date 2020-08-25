@@ -35,6 +35,15 @@ public class Movement {
         this.heading = heading;
     }
 
+    public static boolean validPosition(int x, int y){
+        int xLength = Rover.upGrid.length;
+        int yLength = Rover.upGrid[0].length;
+
+        boolean inBounds = x >= 0 && x <= xLength - 1
+                && y >= 0 && y <= yLength - 1;
+        return inBounds && Rover.upGrid[x][y] == 0;
+    }
+
     @Override
     public String toString() {
         return x + " " + y + " " + heading;
