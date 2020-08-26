@@ -35,6 +35,8 @@ public class Mars {
                     }
                 } else {
                     String instructions = sc.nextLine();
+
+                    // Loop string of instructions updating rover in each loop
                     for( int i = 0; i < instructions.length(); i++ ) {
                         if( rover != null ) {
                             rover.updateRover(instructions.charAt(i));
