@@ -8,6 +8,8 @@ Program and tests have been run in both IntelliJ Community and in the terminal o
 - All input comes from a file `src/input.txt`
 - Rovers cannot be in the same position as another
 - Current `src/input.txt` contains the example input and 2 new rover inputs
+- After plateau size on first input line, every 2 lines is a new rover and set of instructions
+- There will never be more than 1 continuous line of either new rovers or instructions
 
 ## Running
 
