@@ -14,11 +14,14 @@ public class Mars {
             Scanner sc = new Scanner(filename);
             String[] gridSize = sc.nextLine().split(" ");
 
+            // Increased size for x and y to ensure the upper-right coordinate exists
             Rover.plateau = new int[Integer.parseInt(gridSize[0]) + 1][Integer.parseInt(gridSize[1]) + 1];
 
             Rover rover = null;
             while(sc.hasNextLine()) {
 
+                // If the line number is even it's the declaration of a new rover
+                // If the line number is odd it's the set of instructions
                 if(line % 2 == 0) {
                     String[] inputLine = sc.nextLine().split(" ");
 
@@ -26,6 +29,7 @@ public class Mars {
                     int y = Integer.parseInt(inputLine[1]);
                     String heading = inputLine[2];
 
+                    // Only create a new rover if the input values are valid
                     if( Position.validPosition(x, y) && Rotation.validRotation(heading) ) {
                         rover = new Rover(x, y, heading);
                     }
