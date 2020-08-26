@@ -35,6 +35,11 @@ public class Position {
         this.heading = heading;
     }
 
+    /**
+     * @param x coordinate for the x axis
+     * @param y coordinate for the y axis
+     * @return <code>true</code> if the coordinates are within the plateau and don't collide with another rover.
+     */
     public static boolean validPosition(int x, int y){
         int xLength = Rover.plateau.length;
         int yLength = Rover.plateau[0].length;

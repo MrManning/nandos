@@ -44,9 +44,9 @@ public class Mars {
                 line++;
             }
         } catch( FileNotFoundException e ) {
-            System.out.println("Error: File not found");
+            System.err.println("Error: File not found");
         } catch( NumberFormatException e ) {
-            System.out.println("Error: Invalid upper-right coordinates");
+            System.err.println("Error: Invalid upper-right coordinates");
         }
     }
 }

@@ -9,6 +9,11 @@ public class Rover {
         plateau[x][y] = 1;
     }
 
+    /**
+     * Registers the rovers next move and updates the grid if the command supplied is valid.
+     *
+     * @param command the instruction for the rover to execute, either Move, Rotate Right or Rotate Left.
+     */
     public void updateRover(char command) {
         if( Character.toUpperCase(command) == 'M' ) {
             moveRover();
@@ -17,10 +22,13 @@ public class Rover {
         } else if( Character.toUpperCase(command) == 'R' ) {
             rotateRover(command);
         } else {
-            throw new IllegalArgumentException("invalid move");
+            System.err.println("Error: Invalid move, rover not updated");
         }
     }
 
+    /**
+     * Moves the rover one grid point in the direction the rover is facing based on the <code>heading</code>. The grid is updated to keep track of where the rover is positioned.
+     */
     public void moveRover() {
         switch( position.getHeading().name() ) {
             case "N":
@@ -57,6 +65,11 @@ public class Rover {
 
     }
 
+    /**
+     * Sets the new rover direction <code>heading</code> after rotation either Left or Right to one of the four possible <code>Rotation</code> enum values <code>N</code>,<code>E</code>,<code>S</code>,<code>W</code>.
+     *
+     * @param direction the way the rover is to rotate.
+     */
     public void rotateRover(char direction) {
         Rotation updatedHeading;
         if( Character.toUpperCase(direction) == 'L' ) {
