@@ -7,11 +7,25 @@ import java.util.Scanner;
 public class Mars {
 
     public static void main(String[] args) {
-        File filename = new File("src/input.txt");
         int line = 0;
+        Scanner sc = new Scanner(System.in);
+        boolean isValidFile = false;
+
+        while(!isValidFile) {
+            try {
+                System.out.print("Enter input file: ");
+
+                String filename = sc.next();
+                File file = new File(filename);
+                sc = new Scanner(file);
+
+                isValidFile = true;
+            } catch(FileNotFoundException e) {
+                System.out.println("File does not exist");
+            }
+        }
 
         try {
-            Scanner sc = new Scanner(filename);
             String[] gridSize = sc.nextLine().split(" ");
 
             // Increased size for x and y to ensure the upper-right coordinate exists
@@ -49,8 +63,7 @@ public class Mars {
 
                 line++;
             }
-        } catch( FileNotFoundException e ) {
-            System.err.println("Error: File not found");
+            sc.close();
         } catch( NumberFormatException e ) {
             System.err.println("Error: Invalid upper-right coordinates");
         }
