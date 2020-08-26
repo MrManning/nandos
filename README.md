@@ -5,7 +5,7 @@ Program and tests have been run in both IntelliJ Community and in the terminal o
 
 ## Assumptions
 
-- All input comes from a file `src/input.txt`
+- All input comes from a file e.g. `src/input.txt` which is supplied but can be substituted
 - Rovers cannot be in the same position as another
 - Current `src/input.txt` contains the example input and 2 new rover inputs
 - After plateau size on first input line, every 2 lines is a new rover and set of instructions
