@@ -41,12 +41,12 @@ public class Position {
      * @return <code>true</code> if the coordinates are within the plateau and don't collide with another rover.
      */
     public static boolean validPosition(int x, int y){
-        int xLength = Rover.plateau.length;
-        int yLength = Rover.plateau[0].length;
+        int xLength = Mars.plateau.length;
+        int yLength = Mars.plateau[0].length;
 
         boolean inBounds = x >= 0 && x <= xLength - 1
                 && y >= 0 && y <= yLength - 1;
-        return inBounds && Rover.plateau[x][y] == 0;
+        return inBounds && Mars.plateau[x][y] == 0;
     }
 
     @Override

@@ -1,8 +1,9 @@
 package com.nandos;
 
+import static com.nandos.Mars.plateau;
+
 public class Rover {
     public Position position;
-    public static int[][] plateau;
 
     public Rover(int x, int y, String heading) {
         this.position = new Position(x, y, heading);
@@ -22,7 +23,7 @@ public class Rover {
         } else if( Character.toUpperCase(command) == 'R' ) {
             rotateRover(command);
         } else {
-            System.err.println("Error: Invalid move, rover not updated");
+            System.out.println("Error: Invalid move, rover not updated!");
         }
     }
 
@@ -33,30 +34,30 @@ public class Rover {
         switch( position.getHeading().name() ) {
             case "N":
                 if( Position.validPosition(position.getX(), position.getY() + 1)) {
-                    Rover.plateau[position.getX()][position.getY()] = 0;
+                    plateau[position.getX()][position.getY()] = 0;
                     position.setY(position.getY() + 1);
-                    Rover.plateau[position.getX()][position.getY()] = 1;
+                    plateau[position.getX()][position.getY()] = 1;
                 }
                 break;
             case "E":
                 if( Position.validPosition(position.getX() + 1, position.getY())) {
-                    Rover.plateau[position.getX()][position.getY()] = 0;
+                    plateau[position.getX()][position.getY()] = 0;
                     position.setX(position.getX() + 1);
-                    Rover.plateau[position.getX()][position.getY()] = 1;
+                    plateau[position.getX()][position.getY()] = 1;
                 }
                 break;
             case "S":
                 if( Position.validPosition(position.getX(), position.getY() - 1)) {
-                    Rover.plateau[position.getX()][position.getY()] = 0;
+                    plateau[position.getX()][position.getY()] = 0;
                     position.setY(position.getY() - 1);
-                    Rover.plateau[position.getX()][position.getY()] = 1;
+                    plateau[position.getX()][position.getY()] = 1;
                 }
                 break;
             case "W":
                 if( Position.validPosition(position.getX() - 1, position.getY())) {
-                    Rover.plateau[position.getX()][position.getY()] = 0;
+                    plateau[position.getX()][position.getY()] = 0;
                     position.setX(position.getX() - 1);
-                    Rover.plateau[position.getX()][position.getY()] = 1;
+                    plateau[position.getX()][position.getY()] = 1;
                 }
                 break;
             default: break;
